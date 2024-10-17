@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Clever - All Your Rewards In One Place",
+  "version": "1.1.1",
+  "description": "Clever connects to leading loyalty and rewards schemes - and helps you to apply those offers at checkout.",
+  "icons": {
+    "16": "logo192.png",
+    "48": "logo192.png",
+    "128": "logo192.png"
+  },
+  "background": {
+    "service_worker": "static/js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["static/js/content.js"]
+    }
+  ],
+  "action": {},
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["index.html", "pop-icon.html", "js/pop-icon.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
